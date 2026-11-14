@@ -31,8 +31,25 @@
 // img.setAttribute("src","https://plus.unsplash.com/premium_photo-1794287321419-09b339e2fcd9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D");
 // div.prepend(img);
 
-let inp = document.querySelector("input");
+// let inp = document.querySelector("input");
 
-inp.addEventListener("input",function(data){
-    console.log(data.data);
-})
+// inp.addEventListener("input",function(data){
+//     console.log(data.data);
+// })
+
+// let slc = document.querySelector("select");
+// let h2 = document.querySelector("h2");
+// slc.addEventListener("change",function(data){
+//     h2.textContent= `${data.target.value} Selected`;
+// });
+
+// let h2 = document.querySelector("h2");
+
+// window.addEventListener("keydown",function(data){
+
+//     if(data.key === " "){
+//         h2.textContent = "Spc";
+//     }else{
+//         h2.textContent = data.key;
+//     }
+// })
