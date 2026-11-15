@@ -64,13 +64,50 @@
 //     btn.textContent = data.target.files[0].name;
 // })
 
-let form = document.querySelector("form");
-let inp = document.querySelectorAll("input");
+// let form = document.querySelector("form");
+// let inp = document.querySelectorAll("input");
+// let main = document.querySelector(".main")
 
-form.addEventListener("submit",function(detls){
-    detls.preventDefault();
+// form.addEventListener("submit", function (detls) {
+//     detls.preventDefault();
 
-    inp.forEach((inp)=>{
-        console.log(inp + " ");
-    });
+//     let card = document.createElement("div");
+//     card.classList.add("card");
+//     let img = document.createElement("img");
+//     img.setAttribute("src", inp[4].value);
+
+//     let nameP = document.createElement("p");
+//     nameP.textContent = inp[0].value;
+
+//     let classP = document.createElement("p");
+//     classP.textContent = inp[1].value;
+
+//     let rollP = document.createElement("p");
+//     rollP.textContent = inp[2].value;
+
+//     let subjectP = document.createElement("p");
+//     subjectP.textContent = inp[3].value;
+
+//     card.appendChild(img);
+//     card.appendChild(nameP);
+//     card.appendChild(classP);
+//     card.appendChild(rollP);
+//     card.appendChild(subjectP);
+//     main.appendChild(card);
+
+//     inp.forEach((inp)=>{
+//         if(inp.type !== "submit"){
+//             inp.value = " ";
+//         }
+//     })
+// });
+
+let cl = document.querySelector(".color");
+
+cl.addEventListener("mouseover", function () {
+    cl.style.backgroundColor = "Yellow"  
+});
+
+cl.addEventListener("mouseout", function () {
+    cl.style.backgroundColor = "red"  
 });
