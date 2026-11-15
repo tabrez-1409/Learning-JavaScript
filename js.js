@@ -102,12 +102,18 @@
 //     })
 // });
 
-let cl = document.querySelector(".color");
+// let cl = document.querySelector(".color");
 
-cl.addEventListener("mouseover", function () {
-    cl.style.backgroundColor = "Yellow"  
-});
+// cl.addEventListener("mouseover", function () {
+//     cl.style.backgroundColor = "Yellow"  
+// });
 
-cl.addEventListener("mouseout", function () {
-    cl.style.backgroundColor = "red"  
+// cl.addEventListener("mouseout", function () {
+//     cl.style.backgroundColor = "red"  
+// });
+
+let ul = document.querySelector("ul");
+
+ul.addEventListener("click", (detls)=>{
+    detls.target.style.textDecoration = "line-through";
 });
