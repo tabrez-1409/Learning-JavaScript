@@ -54,12 +54,23 @@
 //     }
 // })
 
-let btn = document.querySelector(".btn");
-let inp = document.querySelector("input");
-btn.addEventListener("click",function(){
-    inp.click();
-})
+// let btn = document.querySelector(".btn");
+// let inp = document.querySelector("input");
+// btn.addEventListener("click",function(){
+//     inp.click();
+// })
 
-inp.addEventListener("change", function(data){
-    btn.textContent = data.target.files[0].name;
-})
+// inp.addEventListener("change", function(data){
+//     btn.textContent = data.target.files[0].name;
+// })
+
+let form = document.querySelector("form");
+let inp = document.querySelectorAll("input");
+
+form.addEventListener("submit",function(detls){
+    detls.preventDefault();
+
+    inp.forEach((inp)=>{
+        console.log(inp + " ");
+    });
+});
