@@ -53,3 +53,13 @@
 //         h2.textContent = data.key;
 //     }
 // })
+
+let btn = document.querySelector(".btn");
+let inp = document.querySelector("input");
+btn.addEventListener("click",function(){
+    inp.click();
+})
+
+inp.addEventListener("change", function(data){
+    btn.textContent = data.target.files[0].name;
+})

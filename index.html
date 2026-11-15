@@ -1,8 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>JavaScript</title>
+    <style>
+        .btn {
+            background-color: #2563eb;
+            /* Clean blue background */
+            color: #ffffff;
+            /* White text */
+            padding: 10px 20px;
+            /* Comfortable spacing inside */
+            font-size: 16px;
+            /* Readable text size */
+            font-family: sans-serif;
+            /* Clean font */
+            font-weight: 500;
+            border: none;
+            /* Removes default ugly border */
+            border-radius: 6px;
+            /* Slightly rounded corners */
+            cursor: pointer;
+            /* Shows hand pointer on hover */
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        /* Darkens slightly when hovered */
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
 </head>
+
 <body>
     <ul>
         <li>home</li>
@@ -19,11 +48,17 @@
         <option value="Samsung">Samsung</option>
     </select>
 
-    <input type="text" placeholder="Type...">
-    <div class="div">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi nesciunt libero consequatur suscipit praesentium dolore recusandae possimus ut laborum voluptates, ullam error deleniti cupiditate dolorum ea sequi illo quaerat pariatur qui odit in molestias laudantium blanditiis. Rem non reiciendis adipisci sequi commodi cumque. Consequatur, magni.</div>
-    
+    <input type="file" style="display: none;">
+
+    <button class="btn">Select File</button>
+    <div class="div">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi nesciunt libero consequatur suscipit
+        praesentium dolore recusandae possimus ut laborum voluptates, ullam error deleniti cupiditate dolorum ea sequi
+        illo quaerat pariatur qui odit in molestias laudantium blanditiis. Rem non reiciendis adipisci sequi commodi
+        cumque. Consequatur, magni.</div>
+
 
     <script src="js.js"></script>
 
 </body>
+
 </html>
