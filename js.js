@@ -112,8 +112,22 @@
 //     cl.style.backgroundColor = "red"  
 // });
 
-let ul = document.querySelector("ul");
+// let ul = document.querySelector("ul");
 
-ul.addEventListener("click", (detls)=>{
-    detls.target.style.textDecoration = "line-through";
-});
+// ul.addEventListener("click", (detls)=>{
+//     detls.target.style.textDecoration = "line-through";
+// });
+
+// let inp = document.querySelector("input");
+// let span = document.querySelector("span");
+
+// inp.addEventListener("input", function(){
+//     let left = span.textContent = 20-inp.value.length;
+
+//     if(left < 0){
+//         span.style.color = "red";
+//     }else{
+//         span.style.color = "black";
+//     }
+
+// });
