@@ -133,39 +133,61 @@
 // });
 
 
-let form = document.querySelector("form");
-let Email = document.querySelector("#email");
-let Pass = document.querySelector("#password");
-let success = document.querySelector("#successMessage");
+// let form = document.querySelector("form");
+// let Email = document.querySelector("#email");
+// let Pass = document.querySelector("#password");
+// let success = document.querySelector("#successMessage");
 
-let emailerror = document.querySelector("#emailError");
-let passerror = document.querySelector("#passwordError");
+// let emailerror = document.querySelector("#emailError");
+// let passerror = document.querySelector("#passwordError");
 
-form.addEventListener("submit", function(detls){
-    detls.preventDefault();
+// form.addEventListener("submit", function(detls){
+//     detls.preventDefault();
 
-    emailerror.textContent = " ";
-    passerror.textContent = " ";
-    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    let passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+//     emailerror.textContent = " ";
+//     passerror.textContent = " ";
+//     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//     let passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-    let email = emailRegex.test(Email.value);
-    let pass = passRegex.test(Pass.value);
+//     let email = emailRegex.test(Email.value);
+//     let pass = passRegex.test(Pass.value);
 
-    let isValid = true;
-    if(!email){
-        emailerror.textContent = "Incorrect Email";
-        isValid = false;
-    }
+//     let isValid = true;
+//     if(!email){
+//         emailerror.textContent = "Incorrect Email";
+//         isValid = false;
+//     }
 
-    if(!pass){
-        passerror.textContent = "Incorrect Password";
-        isValid = false;
-    }
+//     if(!pass){
+//         passerror.textContent = "Incorrect Password";
+//         isValid = false;
+//     }
     
-    if(isValid){
-        success.textContent = "Successfuly Submited";
+//     if(isValid){
+//         success.textContent = "Successfuly Submited";
+//     }
+
+
+// })
+
+let progress = document.querySelector("#progress");
+let percentage = document.querySelector("#percentage");
+let stat = document.querySelector("#status");
+let downloadMessage = document.querySelector("#downloadMessage");
+
+let count = 0;
+setInterval(
+    function(){
+    if (count<=99) {
+        count++;
+    }
+    progress.style.width = `${count}%`;
+    percentage.textContent = `${count}%`;
+    if (count === 100) {
+        stat.textContent = "Completed";
+        downloadMessage.textContent = "Download Your File"
     }
 
-
-})
+}
+, 1000*10/100
+);
