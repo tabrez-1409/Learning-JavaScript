@@ -131,3 +131,41 @@
 //     }
 
 // });
+
+
+let form = document.querySelector("form");
+let Email = document.querySelector("#email");
+let Pass = document.querySelector("#password");
+let success = document.querySelector("#successMessage");
+
+let emailerror = document.querySelector("#emailError");
+let passerror = document.querySelector("#passwordError");
+
+form.addEventListener("submit", function(detls){
+    detls.preventDefault();
+
+    emailerror.textContent = " ";
+    passerror.textContent = " ";
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    let email = emailRegex.test(Email.value);
+    let pass = passRegex.test(Pass.value);
+
+    let isValid = true;
+    if(!email){
+        emailerror.textContent = "Incorrect Email";
+        isValid = false;
+    }
+
+    if(!pass){
+        passerror.textContent = "Incorrect Password";
+        isValid = false;
+    }
+    
+    if(isValid){
+        success.textContent = "Successfuly Submited";
+    }
+
+
+})
