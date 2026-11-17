@@ -162,7 +162,7 @@
 //         passerror.textContent = "Incorrect Password";
 //         isValid = false;
 //     }
-    
+
 //     if(isValid){
 //         success.textContent = "Successfuly Submited";
 //     }
@@ -170,24 +170,132 @@
 
 // })
 
-let progress = document.querySelector("#progress");
-let percentage = document.querySelector("#percentage");
-let stat = document.querySelector("#status");
-let downloadMessage = document.querySelector("#downloadMessage");
+// let progress = document.querySelector("#progress");
+// let percentage = document.querySelector("#percentage");
+// let stat = document.querySelector("#status");
+// let downloadMessage = document.querySelector("#downloadMessage");
 
-let count = 0;
-setInterval(
-    function(){
-    if (count<=99) {
-        count++;
-    }
-    progress.style.width = `${count}%`;
-    percentage.textContent = `${count}%`;
-    if (count === 100) {
-        stat.textContent = "Completed";
-        downloadMessage.textContent = "Download Your File"
-    }
+// let count = 0;
+// setInterval(
+//     function(){
+//     if (count<=99) {
+//         count++;
+//     }
+//     progress.style.width = `${count}%`;
+//     percentage.textContent = `${count}%`;
+//     if (count === 100) {
+//         stat.textContent = "Completed";
+//         downloadMessage.textContent = "Download Your File"
+//         alert("Download completed");
+//     }
 
+// }
+// , 1000*10/100
+// );
+
+
+
+const users = [
+    {
+        name: "amisha rathore",
+        bio: "silent chaos in a loud world 🌙 | not for everyone",
+        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400",
+    },
+    {
+        name: "amita mehta",
+        bio: "main character energy ✨ coffee + everything ☕",
+        image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400",
+    },
+    {
+        name: "isha oberoi",
+        bio: "walking through dreams in doc martens 🖤 | late night thinker",
+        image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400",
+    },
+    {
+        name: "ojin oklawa",
+        bio: "too glam to give a damn ✨ | filter free soul",
+        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
+    },
+    {
+        name: "diya bansal",
+        bio: "a little chaos, a lot of art 🎨 | just vibes",
+        image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400",
+    },
+    {
+        name: "tanay rawat",
+        bio: "good vibes, better stories 😎",
+        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400",
+    },
+    {
+        name: "mohit chhabra",
+        bio: "aesthetic overload ❤️ | living in lowercase",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+    }
+];
+
+const cards = document.querySelector(".cards");
+const searchInput = document.querySelector("input");
+
+function showUsers(arr) {
+
+    cards.innerHTML = "";
+
+    arr.forEach(function(user) {
+
+        // Card
+        const card = document.createElement("div");
+        card.className = "card";
+
+        // Image
+        const img = document.createElement("img");
+        img.src = user.image;
+        img.alt = user.name;
+        img.className = "bg-img";
+
+        // Blurred layer
+        const blurredLayer = document.createElement("div");
+        blurredLayer.className = "blurred-layer";
+        blurredLayer.style.backgroundImage = `url("${user.image}")`;
+
+        // Content
+        const content = document.createElement("div");
+        content.className = "content";
+
+        // Heading
+        const heading = document.createElement("h3");
+        heading.textContent = user.name;
+
+        // Paragraph
+        const paragraph = document.createElement("p");
+        paragraph.textContent = user.bio;
+
+        // Append elements
+        content.append(heading, paragraph);
+        card.append(img, blurredLayer, content);
+
+        cards.appendChild(card);
+    });
 }
-, 1000*10/100
-);
+
+// Initial users
+showUsers(users);
+
+searchInput.addEventListener("input",function(){
+    let newUser = users.filter(user=>{
+        return user.name.startsWith(searchInput.value);
+    })
+
+    if (newUser.length>0) {
+        showUsers(newUser);
+    }else{
+       cards.innerHTML = "";
+
+        let p = document.createElement("p");
+        p.textContent = "No Matches Found";
+        p.style.color = "white";
+
+        cards.appendChild(p);
+    }
+
+})
+
