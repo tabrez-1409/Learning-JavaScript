@@ -1,0 +1,82 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 14px 20px;
+}
+
+.accordion {
+    width: 100%;
+    border: 1px solid #292929;
+    border-radius: 16px;
+    padding: 15px;
+}
+
+.accordion > h3 {
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+.accordion-item {
+    border: 1px solid #292929;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    cursor: pointer;
+}
+
+.accordion-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Arrow design */
+
+.arrow {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+    margin-right: 5px;
+}
+
+/* Accordion content */
+
+.accordion-content {
+    display: none;
+    padding: 15px;
+    color: #ccc;
+    font-size: 16px;
+    border-top: 1px solid #292929;
+}
+
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+/* Rotate arrow when open */
+
+.accordion-item.active .arrow {
+    transform: rotate(225deg);
+}
+
+.accordion > p {
+    font-size: 16px;
+    margin-top: 12px;
+}
